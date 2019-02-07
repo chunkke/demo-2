@@ -1,16 +1,22 @@
 <template>
   <div class="hello">
     <router-link to="/addPeople"><h1>{{ msg }}</h1></router-link>
+    <footer-nav v-bind:class="{isIndex: Index}"></footer-nav>
   </div>
 </template>
 
 <script>
+import FooterNav from './footer.vue'
 export default {
   name: 'Welcome',
   data () {
     return {
-      msg: 'Welcome'
+      msg: 'Welcome',
+      Index: true
     }
+  },
+  components: {
+    FooterNav
   }
 }
 </script>

@@ -30,10 +30,12 @@
           </el-table>
       </el-col>
     </el-row>
+    <footer-nav v-bind:class="{ isManage: Manage }"></footer-nav>
   </div>
 </template>
 <script>
 import store from '../store/store'
+import FooterNav from './footer.vue'
 export default {
   name: 'addPeople',
   data () {
@@ -44,8 +46,12 @@ export default {
         age: null,
         sex: ''
       },
-      tableData: store.fetch()
+      tableData: store.fetch(),
+      Manage: true
     }
+  },
+  components: {
+    FooterNav
   },
   methods: {
     create () {
